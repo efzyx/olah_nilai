@@ -7,21 +7,41 @@ package main;
 
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import main.contents.HomeContent;
+import main.contents.TableContent;
 
 /**
  *
  * @author proxc
  */
 public class Home extends javax.swing.JFrame {
+    
+    GridBagLayout layout = new GridBagLayout();
+    HomeContent homeContent;
+    TableContent tableContent;
 
     /**
      * Creates new form Home10
      */
     public Home() {
         initComponents();
+        homeContent = new HomeContent();
+        tableContent = new TableContent();
+        jPanelContent.setLayout(layout);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        jPanelContent.add(homeContent, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        jPanelContent.add(tableContent, gbc);
+        homeContent.setVisible(Boolean.TRUE);
+        tableContent.setVisible(Boolean.FALSE);
     }
     
     static boolean maximized = true;
@@ -35,15 +55,6 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnHome = new javax.swing.JLabel();
-        btnSiswa = new javax.swing.JLabel();
-        btnNilai = new javax.swing.JLabel();
-        btnLaporan = new javax.swing.JLabel();
-        btnAkun = new javax.swing.JLabel();
-        btnKelas = new javax.swing.JLabel();
-        btnPengaturan = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -51,125 +62,21 @@ public class Home extends javax.swing.JFrame {
         close = new javax.swing.JLabel();
         maximizer = new javax.swing.JLabel();
         minimizer = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        btnHome = new javax.swing.JLabel();
+        btnKelas = new javax.swing.JLabel();
+        btnSiswa = new javax.swing.JLabel();
+        btnNilai = new javax.swing.JLabel();
+        btnLaporan = new javax.swing.JLabel();
+        btnAkun = new javax.swing.JLabel();
+        btnPengaturan = new javax.swing.JLabel();
+        jPanelContent = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setName("Home"); // NOI18N
         setUndecorated(true);
-
-        btnHome.setBackground(new java.awt.Color(0, 0, 102));
-        btnHome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(255, 255, 255));
-        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnHome.setText("Beranda");
-        btnHome.setOpaque(true);
-        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnHomeMouseClicked(evt);
-            }
-        });
-
-        btnSiswa.setBackground(new java.awt.Color(0, 51, 204));
-        btnSiswa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnSiswa.setForeground(new java.awt.Color(255, 255, 255));
-        btnSiswa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnSiswa.setText("Siswa");
-        btnSiswa.setOpaque(true);
-        btnSiswa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSiswaMouseClicked(evt);
-            }
-        });
-
-        btnNilai.setBackground(new java.awt.Color(0, 51, 204));
-        btnNilai.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnNilai.setForeground(new java.awt.Color(255, 255, 255));
-        btnNilai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnNilai.setText("Nilai");
-        btnNilai.setOpaque(true);
-        btnNilai.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnNilaiMouseClicked(evt);
-            }
-        });
-
-        btnLaporan.setBackground(new java.awt.Color(0, 51, 204));
-        btnLaporan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnLaporan.setForeground(new java.awt.Color(255, 255, 255));
-        btnLaporan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnLaporan.setText("Laporan");
-        btnLaporan.setOpaque(true);
-        btnLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnLaporanMouseClicked(evt);
-            }
-        });
-
-        btnAkun.setBackground(new java.awt.Color(0, 51, 204));
-        btnAkun.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAkun.setForeground(new java.awt.Color(255, 255, 255));
-        btnAkun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnAkun.setText("Akun");
-        btnAkun.setOpaque(true);
-        btnAkun.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAkunMouseClicked(evt);
-            }
-        });
-
-        btnKelas.setBackground(new java.awt.Color(0, 51, 204));
-        btnKelas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnKelas.setForeground(new java.awt.Color(255, 255, 255));
-        btnKelas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnKelas.setText("Kelas");
-        btnKelas.setOpaque(true);
-        btnKelas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnKelasMouseClicked(evt);
-            }
-        });
-
-        btnPengaturan.setBackground(new java.awt.Color(0, 51, 204));
-        btnPengaturan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnPengaturan.setForeground(new java.awt.Color(255, 255, 255));
-        btnPengaturan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnPengaturan.setText("Pengaturan");
-        btnPengaturan.setOpaque(true);
-        btnPengaturan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPengaturanMouseClicked(evt);
-            }
-        });
-
-        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setBorder(null);
-
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(51, 51, 51));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Keep", "Too", "4", "A"},
-                {"Allan", "Ramstein", "5", "B"},
-                {"Fred", "Simmons", "3", "C"},
-                {"Wendy", "RaG", "2", "A"}
-            },
-            new String [] {
-                "First Name", "Last Name", "Class", "Stream"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setRowHeight(20);
-        jTable1.setSelectionBackground(new java.awt.Color(1, 198, 83));
-        jScrollPane1.setViewportView(jTable1);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -262,48 +169,157 @@ public class Home extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        btnHome.setBackground(new java.awt.Color(0, 0, 102));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnHome.setText("Beranda");
+        btnHome.setOpaque(true);
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHomeMouseClicked(evt);
+            }
+        });
+
+        btnKelas.setBackground(new java.awt.Color(0, 51, 204));
+        btnKelas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnKelas.setForeground(new java.awt.Color(255, 255, 255));
+        btnKelas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnKelas.setText("Kelas");
+        btnKelas.setOpaque(true);
+        btnKelas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnKelasMouseClicked(evt);
+            }
+        });
+
+        btnSiswa.setBackground(new java.awt.Color(0, 51, 204));
+        btnSiswa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnSiswa.setForeground(new java.awt.Color(255, 255, 255));
+        btnSiswa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnSiswa.setText("Siswa");
+        btnSiswa.setOpaque(true);
+        btnSiswa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSiswaMouseClicked(evt);
+            }
+        });
+
+        btnNilai.setBackground(new java.awt.Color(0, 51, 204));
+        btnNilai.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnNilai.setForeground(new java.awt.Color(255, 255, 255));
+        btnNilai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnNilai.setText("Nilai");
+        btnNilai.setOpaque(true);
+        btnNilai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNilaiMouseClicked(evt);
+            }
+        });
+
+        btnLaporan.setBackground(new java.awt.Color(0, 51, 204));
+        btnLaporan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnLaporan.setForeground(new java.awt.Color(255, 255, 255));
+        btnLaporan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnLaporan.setText("Laporan");
+        btnLaporan.setOpaque(true);
+        btnLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLaporanMouseClicked(evt);
+            }
+        });
+
+        btnAkun.setBackground(new java.awt.Color(0, 51, 204));
+        btnAkun.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAkun.setForeground(new java.awt.Color(255, 255, 255));
+        btnAkun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAkun.setText("Akun");
+        btnAkun.setOpaque(true);
+        btnAkun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAkunMouseClicked(evt);
+            }
+        });
+
+        btnPengaturan.setBackground(new java.awt.Color(0, 51, 204));
+        btnPengaturan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnPengaturan.setForeground(new java.awt.Color(255, 255, 255));
+        btnPengaturan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnPengaturan.setText("Pengaturan");
+        btnPengaturan.setOpaque(true);
+        btnPengaturan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPengaturanMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKelas, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSiswa, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNilai, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLaporan, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAkun, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPengaturan, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                .addGap(116, 116, 116))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(btnHome)
+                .addComponent(btnKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNilai, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAkun, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPengaturan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAkun, btnHome, btnKelas, btnLaporan, btnNilai, btnPengaturan, btnSiswa});
+
+        javax.swing.GroupLayout jPanelContentLayout = new javax.swing.GroupLayout(jPanelContent);
+        jPanelContent.setLayout(jPanelContentLayout);
+        jPanelContentLayout.setHorizontalGroup(
+            jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelContentLayout.setVerticalGroup(
+            jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 129, Short.MAX_VALUE)
-                        .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(btnKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnNilai, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnAkun, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnPengaturan, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 116, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNilai, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAkun, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPengaturan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -375,6 +391,8 @@ public class Home extends javax.swing.JFrame {
         resetLblColor(btnNilai);
         resetLblColor(btnPengaturan);
         resetLblColor(btnSiswa);
+        homeContent.setVisible(Boolean.TRUE);
+        tableContent.setVisible(Boolean.FALSE);
     }//GEN-LAST:event_btnHomeMouseClicked
 
     private void btnKelasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKelasMouseClicked
@@ -386,6 +404,8 @@ public class Home extends javax.swing.JFrame {
         resetLblColor(btnNilai);
         resetLblColor(btnPengaturan);
         resetLblColor(btnSiswa);
+        homeContent.setVisible(Boolean.FALSE);
+        tableContent.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_btnKelasMouseClicked
 
     private void btnSiswaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSiswaMouseClicked
@@ -464,23 +484,18 @@ public class Home extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
+        
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Home().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Home().setVisible(true);
         });
     }
 
@@ -497,8 +512,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanelContent;
     private javax.swing.JLabel maximizer;
     private javax.swing.JLabel minimizer;
     // End of variables declaration//GEN-END:variables
